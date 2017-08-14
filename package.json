@@ -1,0 +1,84 @@
+{
+    "name": "vscode-phpf",
+    "displayName": "phpf",
+    "description": "phpF extension for VS Code",
+    "version": "0.0.1",
+    "publisher": "cxfksword",
+    "author": {
+        "name": "cxfksword",
+        "url": "https://github.com/cxfksword"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/cxfksword/VSCode-phpf/issues"
+    },
+    "homepage": "https://github.com/cxfksword/VSCode-phpf/blob/master/README.md",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cxfksword/VSCode-phpf.git"
+    },
+    "engines": {
+        "vscode": "^0.10.6"
+    },
+    "categories": [
+        "Formatters",
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:php"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "phpf.format",
+                "title": "phpf: foramt this file"
+            }
+        ],
+        "configuration": {
+            "title": "phpf Configuration options",
+            "type": "object",
+            "properties": {
+                "phpf.executablePath": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Points to the phpf exectuable."
+                },
+                "phpf.onsave": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Execute phpf on save"
+                },
+                "phpf.style": {
+                    "type": "array",
+                    "default": [
+                        "psr2"
+                    ],
+                    "description": "code style:psr,psr1,psr1-naming,psr2,yoda,cakephp"
+                },
+                "phpf.indent_with_space": {
+                    "type": "integer",
+                    "default": 4,
+                    "description": "use spaces instead of tabs for indentation. Default 4"
+                },
+                "phpf.rules": {
+                    "type": "array",
+                    "default": [
+                        // "--smart_linebreak_after_curly",
+                        // "--enable_auto_align"
+                    ],
+                    "description": "another phpfmt rule options. ex. see `php phpf.phar -h`"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+        "compile": "node ./node_modules/vscode/bin/compile -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install"
+    },
+    "devDependencies": {
+        "typescript": "^1.7.5",
+        "vscode": "^0.11.0"
+    }
+}
