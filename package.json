@@ -63,11 +63,8 @@
                 },
                 "phpf.rules": {
                     "type": "array",
-                    "default": [
-                        // "--smart_linebreak_after_curly",
-                        // "--enable_auto_align"
-                    ],
-                    "description": "another phpfmt rule options. ex. see `php phpf.phar -h`"
+                    "default": [],
+                    "description": "another phpfmt rule options. ex. --smart_linebreak_after_curly,--enable_auto_align. see php phpf.phar -h"
                 }
             }
         }
