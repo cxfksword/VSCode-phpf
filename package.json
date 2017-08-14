@@ -1,7 +1,7 @@
 {
     "name": "vscode-phpf",
     "displayName": "phpf",
-    "description": "phpF extension for VS Code",
+    "description": "phpF extension for format php code",
     "version": "0.0.1",
     "publisher": "cxfksword",
     "author": {
